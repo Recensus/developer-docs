@@ -1,35 +1,24 @@
-A default blog scaffold for **ruhoh** compatible static blog parsers.
+Developer Docs
+==============
 
-**This version is for [ruhohSpec v1.0](http://ruhoh.com/universal-blog-api/) and is only compatible with ruhoh gem 1.0.x.x**
+About
+-----
 
-See <http://ruhoh.com> for more information.
+This repo contains all public facing documentation for developers using the 
+Recensus API's, SDK's and the Recensus Widget. 
 
-## Usage and Documentation
+Contributing
+------------
 
-See <http://ruhoh.com/usage> for full usage and documentation.
+This documentation is written using Ruhoh. It allows developers to write 
+documentation in markdown format and publish it as a set of static html documents.
 
-Currently the only parser is available in ruby as a ruby gem:
 
-````bash
-$ gem install ruhoh --version '1.0.0.alpha'
-$ ruhoh help
-````
+### Installation 
 
-Once you have the gem you can run your blog locally:
+Install RVM: https://rvm.io/rvm/install/
 
-Assume USERNAME is your GitHub username.
+Install Ruhoh: gem install ruhoh
 
-````bash
-$ git clone git://github.com/ruhoh/blog.git USERNAME.ruhoh.com
-$ cd USERNAME.ruhoh.com
-$ rackup -p 9292
-````
-
-Using your GitHub username is useful for automatically publishing to ruhoh.com
-
-For all publishing options including self-hosting see: <http://ruhoh.com/usage/publish>
-
-## License
-
-Released under the [MIT License](http://www.opensource.org/licenses/MIT)
+Have a read of the docs: http://ruhoh.com/usage/
 
