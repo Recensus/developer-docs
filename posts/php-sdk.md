@@ -8,20 +8,20 @@ categories:
 ##Introduction
 
 The PHP-SDK provides PHP developers with a tool which makes integrating Recensus
-into an eccomerce website even easier. The php-sdk offers three features:
+into an ecommerce website even easier. The php-sdk offers three features:
 
 1. A tool to facilitate rendering the Recensus widget and Recensus button on a 
 merchant product page.
 
 2. The facility to embed reviews in SEO friendly html on the merchants website.
 
-3. A tool to schedule aftersales 
+3. A tool to schedule aftersales contact with merchants customers.  
 
 ##Requirements
 
 The Recensus PHP-SDK requires PHP 5.1 and above. 
 
-Contributing to Recensus or using the source directly from github requires 
+Contributing to Recensus or using the source directly from Github requires 
 PHP 5.3 and above.
  
 ##Setting Up The SDK
@@ -112,7 +112,7 @@ $widget = new RecensusWidget($merchantToken, $sharedSecret, $productData);
 
 ?>
 
-<div id="recensuswidget" data-settings="<?php echo $widget->getDataProperty() ?>"></div>
+<div id="recensusbutton" data-settings="<?php echo $widget->getDataProperty() ?>"></div>
 <script src="http://cdn.recensus.com/js/widget.js" type="text/javascript"></script>
 
 ```` 
@@ -121,7 +121,7 @@ $widget = new RecensusWidget($merchantToken, $sharedSecret, $productData);
 
 ## Rendering SEO Friendly Review HTML
 
-In addition to rendering the Recensus widget in an IFrame you may want to render 
+In addition to rendering the Recensus widget in an iFrame you may want to render 
 some SEO friendly HTML.
 
 ### Example - Rendering HTML
@@ -145,13 +145,13 @@ print $html;
 ````
 
 
-## Using The SDK to Make A Customer Contact Request
+## Using The SDK To Make A Customer Contact Request
 
 In order to maximise the number of reviews collected for products Recensus 
-offers you the opportunity to schedule an after sales email to be sent requesting 
+offers you the opportunity to schedule an aftersales email to be sent requesting 
 that the customer reviews their recent purchase. 
 
-When a customer posts a review on Recensus it immediatley appears on the the 
+When a customer posts a review on Recensus it immediately appears on the 
 corresponding product page on the merchants website. 
 
 ### Example - Making A Customer Contact Request
@@ -192,7 +192,7 @@ $api->makeCustomerContactRequest($ccr);
 ### Customer Contact Request Structure
 
 A customer contact request consists of two parts. An array of customer data 
-containing which contains within it an array of purchases. This data is used
+ which in turn contains an array of purchases. This data is used
 to create an email requesting the customer to leave feedback for their purchases 
 on Recensus so it's important that they are correct.
 
@@ -201,11 +201,11 @@ on Recensus so it's important that they are correct.
 
 __merchant:__ The merchant token
 
-__customerFirstName:__ The customers first name
+__customerFirstName:__ The customer's first name
 
-__customerLastName:__ The customers first name
+__customerLastName:__ The customer's first name
 
-__customerEmail:__ The customers email address. We use this to send the request email.
+__customerEmail:__ The customer's email address. We use this to send the request email.
 
 __purchaseDate:__ The date the customer made this purchase
 
@@ -223,7 +223,7 @@ __mpn:__ The 'merchant product name'
 
 __gtin:__ The 'Global Trade Item Number' (barcode).
 
-__quantity:__ The quanitity of the item purchased.
+__quantity:__ The quantity of the item purchased.
 
 __lang:__ The language of the product
 
@@ -238,7 +238,7 @@ __url:__ The url for the product on the merchants site
 ## Error Handling
 
 Both classes in the SDK have two types of error handling. 
-PHP Notices for older E-Commerse applications and Exceptions for more modern 
+PHP Notices for older ecommerce applications and Exceptions for more modern 
 PHP frameworks.
 
 ## Example - Setting Error Handling in RecensusWidget

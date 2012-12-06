@@ -8,11 +8,11 @@ categories: API
 Introduction
 ------------
 
-The customer contact API allows you to hook Recensus into your after sales
+The customer contact API allows you to hook Recensus into your aftersales
 process and schedule an email to be sent to a customer asking them to review
 the product(s) they purchased from your site. 
 
-When customers recieve the email they are prompted to click a link to leave 
+When customers receive the email they are prompted to click a link to leave 
 feedback for the products they have purchased on recensus.com. Shortly 
 afterwards subject to validation the product reviews are displayed on the 
 Recensus widget. 
@@ -28,8 +28,8 @@ is made up of two parts.
 
 1) A data section containing the data required by the API 
 
-2) A 'Signed Request' containing your merchant API token and a hash of various
-request parameters and the 'shared secret' you recieved when registering as a 
+2) A 'Signed Request' containing a merchant API token and a hash of various
+request parameters and the 'shared secret' you received when registering as a 
 merchant with Recensus. 
 
 The JSON data is then posted to the endpoint to schedule a CCR.
@@ -52,7 +52,7 @@ Building a signed request is easy. It is an MD5 hash of the following elements:
 
 ### Building The Data
 
-Building the data section of a CCR is straight forward. A JSON structure 
+Building the data section of a CCR is straightforward. A JSON structure 
 representing the transaction is created and nested within this is a structure 
 representing the products purchased.     
 
@@ -61,20 +61,20 @@ representing the products purchased.
 The following fields are required:
 
 1. **merchant:** This is your merchant id (given to you on registration).
-2. **customerFirstName:** The customers first name.
-3. **customerLastName:** The customers last name. 
-4. **customerEmail:** The customers email address.
+2. **customerFirstName:** The customer's first name.
+3. **customerLastName:** The customer's last name. 
+4. **customerEmail:** The customer's email address.
 5. **purchaseDate:** The date the customer made the purchase at your store.
-6. **purchases:** An array of purchase objects as described bellow. 
+6. **purchases:** An array of purchase objects as described below. 
  
 #### Building The Nested Products
 
 The following fields are required: 
 
 1. **quantity:** The quantity of the item purchased.
-2. **gtin:** The products GTIN number (blank if unknown). See bellow.
-3. **mpn:** The products Manufacturer Product Name (blank if unknown). See bellow.
-4. **brand:** The products brand (blank if unknown). See bellow.
+2. **gtin:** The products GTIN number (blank if unknown). See below.
+3. **mpn:** The products Manufacturer Product Name (blank if unknown). See below.
+4. **brand:** The products brand (blank if unknown). See below.
 5. **lang:** The products language in two letter iso format. (eg - "en")
 6. **title:** The products title. Defined by you - a custom name for the product.
 7. **type:** The type of product. Currently only "P" (for product) is supported but later additional types will be added.
@@ -85,11 +85,9 @@ a customer has purchased. There are three so called 'identifying fields': GTIN,
 MPN (Manufacturer Product Name) and Brand. The following combinations are acceptable when submitting purchases
 to this API. ALL id fields should be submitted, if you don't want to include a field, leave it empty.
 
-1. GTIN, MPN, Brand (Prefared)
+1. GTIN, MPN, Brand (Preferred)
 2. GTIN
 3. MPN + Brand
-
-
 
 ````
 {

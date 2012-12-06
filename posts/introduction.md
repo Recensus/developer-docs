@@ -8,6 +8,6 @@ categories:
 Overview
 ========
 
-Recensus offerers a number of ways to integrate a better review experiance into 
+Recensus offerers a number of ways to integrate a better review experience into 
 your website. 
 
