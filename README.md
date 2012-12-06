@@ -33,4 +33,4 @@ rackup -p 9292
 ````
 
 Then goto http://localhost:9292 to read the docs. 
-.
+
