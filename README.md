@@ -14,9 +14,17 @@ This documentation is written using Ruhoh. It allows developers to write
 documentation in markdown format and publish it as a set of static html documents.
 
 
+## Requirements
+c++ compiler (like xcode cli)
+c compiler
+
+
 ### Installation 
 
 Install RVM: https://rvm.io/rvm/install/
+
+Switch to latest version of ruby
+rvm install 1.9.3
 
 Install Ruhoh: gem install ruhoh
 
