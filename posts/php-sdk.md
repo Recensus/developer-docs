@@ -1,6 +1,6 @@
 ---
 title: php-sdk
-date: '2012-12-04'
+date: '2012-01-02'
 description: Developing Against the Recensus Platform Using PHP
 categories:
 ---
@@ -36,6 +36,8 @@ You can then require the file like so:
 ````php 
 <?php 
 require_once "path/to/recensus.php";
+?>
+
 ````
 
 ### Installing With Composer
@@ -67,6 +69,14 @@ The Recensus widget is rendered using an iFrame. The iFrame is generated using
 javascript. The javascript looks for specific html elements on the page and 
 transforms them into the iframe.
 
+To render the widget use the following steps: 
+
+1) Ensure the recensus javascript is loaded in the pages footer.
+
+2) Choose the type of widget you'd like displayed on the page (widget, button)
+
+3) Create a <div> as described bellow and use the PHPSDK to fill it's "data-settings" property.
+
 ### Example - Rendering The Review Widget
 
 ````
@@ -77,8 +87,7 @@ $sharedSecret = "<!-- YOUR SHARED SECRET -->";
 
 $productData = array(
     "url" => "http://yourwebsite.com/yourproductpage",
-    "gtin" => "123456",
-    "lang" => "en"
+    "name" => "Sony Walkman"
 );
 
 $widget = new RecensusWidget($merchantToken, $sharedSecret, $productData);
@@ -104,20 +113,19 @@ $sharedSecret = "<!-- YOUR SHARED SECRET -->";
 
 $productData = array(
     "url" => "http://yourwebsite.com/yourproductpage",
-    "gtin" => "123456",
-    "lang" => "en"
+    "name" => "Sony Walkman"
 );
 
 $widget = new RecensusWidget($merchantToken, $sharedSecret, $productData);
 
 ?>
 
-<div id="recensusbutton" data-settings="<?php echo $widget->getDataProperty() ?>"></div>
+<div class="recensusbutton" data-settings="<?php echo $widget->getDataProperty() ?>"></div>
 <script src="http://cdn.recensus.com/js/widget.js" type="text/javascript"></script>
 
 ```` 
 
-<img src="https://s3-sa-east-1.amazonaws.com/developer.recensus.com/review-button-dark.png" height=100 width=200/>
+<img src="https://s3-sa-east-1.amazonaws.com/developer.recensus.com/review-button-dark.png" height="100" width="200"/>
 
 ## Rendering SEO Friendly Review HTML
 
@@ -127,22 +135,69 @@ some SEO friendly HTML.
 ### Example - Rendering HTML
 
 ````
+<?php 
 $merchantToken = "<-- YOUR MERCHANT TOKEN -->";
 $sharedSecret = "<!-- YOUR SHARED SECRET -->";
 
 $productData = array(
     "url" => "http://yourwebsite.com/yourproductpage",
-    "gtin" => "123456",
-    "lang" => "en"
+    "name" => "Sony Walkman"
 );
 
 $widget = new RecensusWidget($merchantId, $sharedSecret, $productData);
 
 $html = $widget->getHTMLFragment();
+?>
 
-print $html;
+<div id="recensuswidget"><?php print $html; ?> </div>
+
 
 ````
+
+### Values Accepted in the $productData Array
+
+<table>
+    <thead>
+        <td>Attribute</td>
+        <td>Description</td>
+        <td>Required</td>
+    </thead>
+    <tr> 
+        <td>gtin</td>
+        <td>GTIN - Global Trade Identifier. Used by recensus to match products across sites.</td>
+        <td>Reccomended</td>
+    </tr>
+    <tr> 
+        <td>brand</td>
+        <td>The brand name of the product. EG - Sony</td>
+        <td>Recommended</td>
+    </tr>
+    <tr> 
+        <td>mpn</td>
+        <td>MPN - Merchant Product Name. The name of the product according to the manufactorer. EG - Walkman</td>
+        <td>Recommended</td>
+    </tr>
+    <tr> 
+        <td>price</td>
+        <td>The price of the product not including shipping</td>
+        <td>No</td>
+    </tr>
+    <tr> 
+        <td>currency</td>
+        <td>The currency the product is sold in.</td>
+        <td>No</td>
+    </tr>
+    <tr> 
+        <td>type</td>
+        <td>The Recensus entity type. At the moment only 'P' for product is accepted however additonal types will be supported in the future. Defaults to "P"</td>
+        <td>No</td>
+    </tr>
+        <tr> 
+        <td>lang</td>
+        <td>THe language the product is sold in. Defaults to en.</td>
+        <td>No</td>
+    </tr>
+</table>
 
 
 ## Using The SDK To Make A Customer Contact Request
@@ -172,14 +227,15 @@ $ccr = array(
             "purchaseDate" => "2012-12-12T16:00:00+0000",
             "purchases" => array(
                 array(
+                    "name" => "TEST"
+                    "url" => "http://yourwebsite.com/yourproductpage"
                     "brand" => "TEST",
                     "mpn" => "TEST",
                     "gtin" => 123456,
                     "quantity" => 2,
                     "lang" => "en",
-                    "type" => "P",
-                    "title" => "TEST",
-                    "url" => "http://yourwebsite.com/yourproductpage",)
+                    "type" => "P"
+                    )
             ),
         );
 
@@ -215,7 +271,10 @@ __purchases:__ An array of purchase arrays (described below)
 
 In order for Recensus to identify the product __the GTIN or both the brand and mpn
 must be sent in the request.__
+
+__name:__ The name of the product on the merchants site 
  
+__url:__ The url for the product on the merchants site 
 
 __brand:__ The product Brand
 
@@ -229,10 +288,6 @@ __lang:__ The language of the product
 
 __type:__ The type of product. At present only 'P' (product) is supported. 
 However further product types will be supported in the future. 
-
-__title:__ The merchant specific title for the product. 
-
-__url:__ The url for the product on the merchants site 
 
 
 ## Error Handling

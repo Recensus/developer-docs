@@ -1,6 +1,6 @@
 ---
 title: Customer Contact API
-date: '2012-11-26'
+date: '2012-01-01'
 description: "An API allowing you to schedule a post purchase follow up email in order to solicit reviews"
 categories: API
 ---
@@ -71,23 +71,14 @@ The following fields are required:
 
 The following fields are required: 
 
+1. **name:** The name of the product
+2. **url:** The url of the product page on the merchants website
 1. **quantity:** The quantity of the item purchased.
-2. **gtin:** The products GTIN number (blank if unknown). See below.
-3. **mpn:** The products Manufacturer Product Name (blank if unknown). See below.
-4. **brand:** The products brand (blank if unknown). See below.
-5. **lang:** The products language in two letter iso format. (eg - "en")
-6. **title:** The products title. Defined by you - a custom name for the product.
-7. **type:** The type of product. Currently only "P" (for product) is supported but later additional types will be added.
+2. **lang:** The products language in two letter iso format. (eg - "en")
+4. **type:** The type of product. Currently only "P" (for product) is supported but later additional types will be added.
 
-**Note:** Just like when using the Recensus widget certain identifying fields are
-required that allow Recensus to identify the product from your website that 
-a customer has purchased. There are three so called 'identifying fields': GTIN, 
-MPN (Manufacturer Product Name) and Brand. The following combinations are acceptable when submitting purchases
-to this API. ALL id fields should be submitted, if you don't want to include a field, leave it empty.
+**Note:** Just like when using the Recensus widget the name and URL fields which identify your product are required. We recommedn you also send GTIN, MPN and brand if available see examples below. If you don't want to include a field, leave it empty.
 
-1. GTIN, MPN, Brand (Preferred)
-2. GTIN
-3. MPN + Brand
 
 ````
 {
@@ -100,16 +91,19 @@ to this API. ALL id fields should be submitted, if you don't want to include a f
         "purchases": [
             // Example of a purchase with all id fields (gtin, brand, mpn).
             {
+                "name": "Nike Shoes",
+                "url": "http://mysite.com/products/nike-shoes, 
                 "quantity": "2",
                 "gtin": "123456",
                 "mpn": "Cool Beans",
                 "brand": "Nike",
                 "lang": "en",
-                "title": "Nike Shoes",
                 "type": "P"
             },
             // Example of a purchase with gtin id field
             {
+                "name": "Nike Shoes",
+                "url": "http://mysite.com/products/nike-shoes, 
                 "quantity": "2",
                 "gtin": "654321",
                 "mpn": "",
@@ -120,12 +114,13 @@ to this API. ALL id fields should be submitted, if you don't want to include a f
             },
             // Example of a purchase with Brand + Mpn id fields
             {
+                "name": "Nike Shoes",
+                "url": "http://mysite.com/products/nike-shoes, 
                 "quantity": "2",
                 "gtin": "",
                 "mpn": "Cool Beans",
                 "brand": "Nike",
                 "lang": "en",
-                "title": "Nike Shoes",
                 "type": "P"
             },
         ]
