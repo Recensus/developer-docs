@@ -1,8 +1,8 @@
 ---
-title:
+title: Javascript SDK
 date: '2012-12-20'
 description:
-categories:
+categories: ['docs', 'sdk']
 ---
 
 ## The Javascript SDK

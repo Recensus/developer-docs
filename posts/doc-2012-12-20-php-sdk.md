@@ -1,8 +1,8 @@
 ---
-title: php-sdk
-date: '2012-01-02'
+title: PHP SDK
+date: '2012-12-20'
 description: Developing Against the Recensus Platform Using PHP
-categories:
+categories: docs
 ---
 
 ##Introduction

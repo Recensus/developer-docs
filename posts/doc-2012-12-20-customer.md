@@ -1,8 +1,8 @@
 ---
 title: Customer Contact API
-date: '2012-01-01'
+date: '2012-12-20'
 description: "An API allowing you to schedule a post purchase follow up email in order to solicit reviews"
-categories: API
+categories:  docs
 ---
 
 Introduction

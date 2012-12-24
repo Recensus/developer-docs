@@ -2,12 +2,9 @@
 layout : default
 ---
 
-<div class="page-header">
-  <h1>{{ page.title }} {{# page.tagline }} <small>{{ . }}</small>{{/ page.tagline }}</h1>
-</div>
+<header class="jumbotron subhead">
+    <h1>{{ page.title }} </h1>
+    <p class="lead">{{# page.tagline }}{{ . }}{{/ page.tagline }}</p>
+</header>
 
-<div class="row">
-  <div class="span12">
-    {{{ content }}}
-  </div>
-</div>
+{{{ content }}}

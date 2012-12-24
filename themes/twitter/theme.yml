@@ -1,7 +1,8 @@
 {
   "stylesheets" : {
     "default" : [
-      "bootstrap.min.css",
+      "bootstrapsimplex.css",
+      "bootstrap-responsive.css",
       "style.css"
     ],
    
@@ -13,11 +14,13 @@
 
   "javascripts" : {
     "default" : [
+      "bootstrap.js",
+      "application.js"
     ]
   },
   
   "manifest" : {
-    "author" : "Jacob Thornton and Mark Otto",
-    "website" : "http://twitter.github.com/bootstrap"
+    "author" : "Ben Waine and Leonard Austin at Recensus",
+    "website" : "http://github.com/recensus"
   }
 }
