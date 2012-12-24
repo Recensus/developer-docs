@@ -40,8 +40,6 @@ following command in the root of the docs project:
 ````
 cd /vagrant
 sudo rackup -p 80
-````
-
-Edit your hosts file on the host machine to use developer.recensus.local 
+```` 
 
 Then go to http://192.168.50.14 to read the docs. 
