@@ -22,10 +22,12 @@ Follow the instructions here to get your development docs environment working.
 vagrant up
 
 Switch to latest version of ruby
+
+````
 sudo rvm install 1.9.3
 rvm use 1.9.3
-
-gem install ruhoh
+sudo gem install ruhoh
+````
 
 Have a read of the docs: http://ruhoh.com/usage/
 
@@ -36,10 +38,10 @@ files. You can spin up a dynamic version of the documentstion by using the the
 following command in the root of the docs project: 
 
 ````
-rackup -h developer.recensus.local -p80
+cd /vagrant
+sudo rackup -p 80
 ````
 
 Edit your hosts file on the host machine to use developer.recensus.local 
 
-Then goto http://developer.recensus.local to read the docs. 
-
+Then go to http://192.168.50.14 to read the docs. 
