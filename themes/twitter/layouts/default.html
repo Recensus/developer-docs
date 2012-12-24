@@ -13,9 +13,13 @@
     {{# page.description }}
     <meta name="description" content="{{ . }}" />
     {{/ page.description }}
-
-    {{{ assets }}}
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <link rel="shortcut icon" type="image/x-icon" href="{{ urls.media }}/favicon.png" />
+    
+    
+    {{{ assets }}}
+    
 </head>
 <body>
         
@@ -36,6 +40,15 @@
                     {{# site.navigation?to_pages }}
                       {{> pages_list }}
                     {{/ site.navigation?to_pages }}
+                    
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="">Documentation<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        {{# db.posts.categories.docs.posts?to_posts }}
+                          <li><a href="{{url}}">{{title}}</a></li>
+                        {{/ db.posts.categories.docs.posts?to_posts }}
+                        </ul>
+                    </li>
                     </ul>
                 </div>
 
@@ -46,7 +59,6 @@
 <div class="container-fluid">
 
     {{{ content }}}
-
     
     <footer class="footer">
         <div class="row-fluid">

@@ -21,7 +21,7 @@ On registration a test merchant is created, please use this merchant when testin
 To use the recensus SDK it should be included in the footer of yoyr page
 
 ````javascript
-    <script src="http://cdn.recensus.com/js/widget.js" type="text/javascript"></script> 
+<script src="http://cdn.recensus.com/js/widget.js" type="text/javascript"></script> 
 ````
 
 ## Rendering Review Content
@@ -32,15 +32,15 @@ correct properties on the page.
 In this example a div is used to create the Recensus Widget. 
 
 ````html 
-	<div id="recensuswidget" data-settings="name=FRAOCH+22&url=http%3A%2F%2Fapp.recensus.com%2Fdemo%2Fwbb&mid=2&hash=e3b660c002d682122537f2ad312ad177"></div>
-    <script src="http://cdn.recensus.com/js/widget.js" type="text/javascript"></script> 
+<div id="recensuswidget" data-settings="name=FRAOCH+22&url=http%3A%2F%2Fapp.recensus.com%2Fdemo%2Fwbb&mid=2&hash=e3b660c002d682122537f2ad312ad177"></div>
+<script src="http://cdn.recensus.com/js/widget.js" type="text/javascript"></script> 
 ````
 
 You can see that demo in action at http://app.recensus.com/demo/wbb
 
 Bellow is a speification of what should appear in the "data-settings" attribute of the div.
 
-<table>
+<table class="table table-striped table-bordered">
 	<thead>
 		<td>Attribute</td>
 		<td>Description</td>
@@ -120,8 +120,8 @@ Recensus provides a range of review widgets to use in the numerous differnt area
 This widget is designed to be displayed at the foot a merchants product page. It displays all the products reviews in full and allows users to leave a review by filling in the review form and logging in with Facebook. One review widget may be displayed per page.
 
 ````html 
-	<div id="recensuswidget" data-settings="name=FRAOCH+22&url=http%3A%2F%2Fapp.recensus.com%2Fdemo%2Fwbb&mid=2&hash=e3b660c002d682122537f2ad312ad177"></div>
-    <script src="http://cdn.recensus.com/js/widget.js" type="text/javascript"></script> 
+<div id="recensuswidget" data-settings="name=FRAOCH+22&url=http%3A%2F%2Fapp.recensus.com%2Fdemo%2Fwbb&mid=2&hash=e3b660c002d682122537f2ad312ad177"></div>
+<script src="http://cdn.recensus.com/js/widget.js" type="text/javascript"></script> 
 ````
 
 <img src="https://s3-sa-east-1.amazonaws.com/developer.recensus.com/review-widget-light.png" height=700 width=700 />
@@ -131,8 +131,8 @@ This widget is designed to be displayed at the foot a merchants product page. It
 This button shows the Recensus logo and the text "Read Reviews". It is designed to be show inline with producst in a view where multiple products appear on the same page or when the merchant wants to provide the ability to read review content inline with the product. When a customer clicks on the button an Iframe containing the full review widget appears. Multiple review buttons may be displayed per page.
 
 ````html 
-	<div class="recensusbutton" data-settings="name=FRAOCH+22&url=http%3A%2F%2Fapp.recensus.com%2Fdemo%2Fwbb&mid=2&hash=e3b660c002d682122537f2ad312ad177"></div>
-    <script src="http://cdn.recensus.com/js/widget.js" type="text/javascript"></script> 
+<div class="recensusbutton" data-settings="name=FRAOCH+22&url=http%3A%2F%2Fapp.recensus.com%2Fdemo%2Fwbb&mid=2&hash=e3b660c002d682122537f2ad312ad177"></div>
+<script src="http://cdn.recensus.com/js/widget.js" type="text/javascript"></script> 
 ````
 
 <img src="https://s3-sa-east-1.amazonaws.com/developer.recensus.com/review-button-dark.png" height=100 width=200/>
