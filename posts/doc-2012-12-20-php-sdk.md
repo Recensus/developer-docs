@@ -1,8 +1,8 @@
 ---
-title: php-sdk
-date: '2012-01-02'
+title: PHP SDK
+date: '2012-12-20'
 description: Developing Against the Recensus Platform Using PHP
-categories:
+categories: ['docs', 'sdk']
 ---
 
 ##Introduction
@@ -45,11 +45,11 @@ require_once "path/to/recensus.php";
 Add the following line to your composer.json file:
 
 ````
-    {    
-        "require": {          
-            "recensus/php-sdk": "dev-master"
-        }
+{    
+    "require": {          
+        "recensus/php-sdk": "dev-master"
     }
+}
 ````
 
 Install your dependencies:
@@ -156,7 +156,7 @@ $html = $widget->getHTML();
 
 ### Values Accepted in the $productData Array
 
-<table>
+<table class="table table-stripped table-bordered">
     <thead>
         <td>Attribute</td>
         <td>Description</td>

@@ -1,4 +1,4 @@
-title : Recensus:Developer
+title : Developers
 tagline: Making developing on the Recensus platform a 5 star experiance.
 author :
   name : Recensus
@@ -7,9 +7,4 @@ author :
   twitter : '@rcnss'
 
 navigation :
-  - archive.html
-  - tags.html
-  - categories.html
-  - pages.html
-  - about.md
-  
+  - blog.html

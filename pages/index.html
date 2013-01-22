@@ -3,19 +3,48 @@ title: Recensus Developer Documentation
 description:
 ---
 
-<h2>Build With Recensus</h2>
 
-<p>Welcome to the Recensus developer documentation. This site includes all the 
-    information required to integrate the Recensus review widget into your 
-    ecommerce website and use the Recensus APIs to communicate with your
-    customers. </p>
-
-
-
-<h2>Documentation</h2>
-
-{{# posts_latest }}
-<div class="post">
-  <h3 class="title"><a href="{{url}}">{{title}}</a></h3>
+<div class="row-fluid">
+    <div class="span12">
+        <div class="well">
+        <p>Welcome to the Recensus developer documentation. This site includes all the 
+            information required to integrate the Recensus review widget into your 
+            ecommerce website and use the Recensus APIs to communicate with your
+            customers.</p>
+        </div>
+    </div>
 </div>
-{{/ posts_latest }}
+
+
+<div class="row-fluid">
+    <div class="span4">
+        <div class="well">
+        <h2>Buttons</h2>
+            <ul>
+        {{# posts_latest }}
+                <li><a href="{{url}}">{{title}}</a></li>
+        {{/ posts_latest }}
+            </ul>
+        </div>
+    </div>
+    <div class="span4">
+        <div class="well">
+        <h2>Widgets</h2>
+            <ul>
+        {{# posts_latest }}
+                <li><a href="{{url}}">{{title}}</a></li>
+        {{/ posts_latest }}
+            </ul>
+        </div>
+    </div>
+    <div class="span4">
+        <div class="well">
+        <h2>Customer Contact</h2>
+            <ul>
+        {{# posts_latest }}
+                <li><a href="{{url}}">{{title}}</a></li>
+        {{/ posts_latest }}
+            </ul>
+        </div>
+    </div>
+</div>
