@@ -28,7 +28,7 @@ PHP 5.3 and above.
 
 ###Downloading The Single PHP File
 
-You can use [this link](https://github.com/downloads/Recensus/php-sdk/recensus.php) 
+You can use [this link](http://developer.recensus.com/downloads/recensus-php-sdk.zip) 
 to download a single file containing the Recensus SDK and it's dependencies.
 
 You can then require the file like so: 
@@ -90,11 +90,11 @@ $productData = array(
     "name" => "Sony Walkman"
 );
 
-$widget = new RecensusWidget($merchantToken, $sharedSecret, $productData);
+$widget = new Recensus_Widget($merchantToken, $sharedSecret, $productData);
 
 ?>
 
-<div id="recensuswidget" data-settings="<?php echo $widget->getDataProperty() ?>"></div>
+<div class="recensus" data-settings="<?php echo $widget->getDataProperty() ?>" data-type="full"></div>
 <script src="http://cdn.recensus.com/js/widget.js" type="text/javascript"></script>
 
 ```` 
@@ -116,11 +116,11 @@ $productData = array(
     "name" => "Sony Walkman"
 );
 
-$widget = new RecensusWidget($merchantToken, $sharedSecret, $productData);
+$widget = new Recensus_Widget($merchantToken, $sharedSecret, $productData);
 
 ?>
 
-<div class="recensusbutton" data-settings="<?php echo $widget->getDataProperty() ?>"></div>
+<div class="recensus" data-settings="<?php echo $widget->getDataProperty() ?>" data-type="button"></div>
 <script src="http://cdn.recensus.com/js/widget.js" type="text/javascript"></script>
 
 ```` 
@@ -144,12 +144,12 @@ $productData = array(
     "name" => "Sony Walkman"
 );
 
-$widget = new RecensusWidget($merchantId, $sharedSecret, $productData);
+$widget = new Recensus_Widget($merchantId, $sharedSecret, $productData);
 
-$html = $widget->getHTMLFragment();
+$html = $widget->getHTML();
 ?>
 
-<div id="recensuswidget"><?php print $html; ?> </div>
+<div><?php print $html; ?> </div>
 
 
 ````
@@ -239,7 +239,7 @@ $ccr = array(
             ),
         );
 
-$api = new RecensusApi($merchantId, $sharedSecret, true);
+$api = new Recensus_Api($merchantId, $sharedSecret, true);
 
 $api->makeCustomerContactRequest($ccr);
 
@@ -296,33 +296,33 @@ Both classes in the SDK have two types of error handling.
 PHP Notices for older ecommerce applications and Exceptions for more modern 
 PHP frameworks.
 
-## Example - Setting Error Handling in RecensusWidget
+## Example - Setting Error Handling in Recensus_Widget
 
 ````
 // The default setting is to use PHP Notices to alert errors.
-$widget = new RecensusWidget($merchantToken, $merchantSecret);
+$widget = new Recensus_Widget($merchantToken, $merchantSecret);
 
 // You can pass true as the fourth argument to use Exceptions instead. 
 // Note: Failure to catch exceptions will result in the product page failing to render.
-$widget = new RecensusWidget($merchantToken, $merchantSecret, null, true);
+$widget = new Recensus_Widget($merchantToken, $merchantSecret, null, true);
 
-// You can also set RecensusWidget to throw exceptions after construction.
-$widget = new RecensusWidget($merchantToken, $merchantSecret);
+// You can also set Recensus_Widget to throw exceptions after construction.
+$widget = new Recensus_Widget($merchantToken, $merchantSecret);
 $widget->setThrowExceptions(true);
 
 ````
 
-## Example - Setting Error Handling in RecensusApi
+## Example - Setting Error Handling in Recensus_Api
 
 ````
 // The default setting is to use PHP Notices to alert errors.
-$api = new RecensusApi($merchantToken, $merchantSecret);
+$api = new Recensus_Api($merchantToken, $merchantSecret);
 
 // You can pass true as the third argument to use Exceptions instead. 
-$api = new RecensusApi($merchantToken, $merchantSecret, true);
+$api = new Recensus_Api($merchantToken, $merchantSecret, true);
 
-// You can also set RecensusApi to throw exceptions after construction.
-$api = new RecensusApi($merchantToken, $merchantSecret);
+// You can also set Recensus_Api to throw exceptions after construction.
+$api = new Recensus_Api($merchantToken, $merchantSecret);
 $api->setThrowExceptions(true);
 
 ````
