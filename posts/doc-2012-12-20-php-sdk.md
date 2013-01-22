@@ -82,7 +82,7 @@ To render the widget use the following steps:
 ````
 <?php 
 // You can get your merchantToken and merchantSeret from the Recensus control pannel
-$merchantToken = "<-- YOUR MERCHANT TOKEN -->";
+$merchantId = "<-- YOUR MERCHANT ID -->";
 $sharedSecret = "<!-- YOUR SHARED SECRET -->";
 
 $productData = array(
@@ -90,7 +90,7 @@ $productData = array(
     "name" => "Sony Walkman"
 );
 
-$widget = new Recensus_Widget($merchantToken, $sharedSecret, $productData);
+$widget = new Recensus_Widget($merchantId, $sharedSecret, $productData);
 
 ?>
 
@@ -108,7 +108,7 @@ $widget = new Recensus_Widget($merchantToken, $sharedSecret, $productData);
 ````
 <?php 
 // You can get your merchantToken and merchantSeret from the Recensus control pannel
-$merchantToken = "<-- YOUR MERCHANT TOKEN -->";
+$merchantId = "<-- YOUR MERCHANT ID -->";
 $sharedSecret = "<!-- YOUR SHARED SECRET -->";
 
 $productData = array(
@@ -116,7 +116,7 @@ $productData = array(
     "name" => "Sony Walkman"
 );
 
-$widget = new Recensus_Widget($merchantToken, $sharedSecret, $productData);
+$widget = new Recensus_Widget($merchantId, $sharedSecret, $productData);
 
 ?>
 
@@ -136,7 +136,7 @@ some SEO friendly HTML.
 
 ````
 <?php 
-$merchantToken = "<-- YOUR MERCHANT TOKEN -->";
+$merchantId = "<-- YOUR MERCHANT ID -->";
 $sharedSecret = "<!-- YOUR SHARED SECRET -->";
 
 $productData = array(
@@ -217,10 +217,10 @@ of customer and product data to the makeCustomerContactRequest method.
 Below is an example followed by the specification of array to pass to makeCustomerContactRequest.  
 
 ````
-$merchantToken = "<-- YOUR MERCHANT TOKEN -->";
+$merchantId = "<-- YOUR MERCHANT ID -->";
 $sharedSecret = "<!-- YOUR SHARED SECRET -->";
 $ccr = array(
-            "merchant" => <-- YOUR MERCHANT TOKEN -->,
+            "merchant" => <-- YOUR MERCHANT ID -->,
             "customerFirstName" => "BW",
             "customerLastName" => "BW",
             "customerEmail" => "bw@bw.com",
@@ -300,14 +300,14 @@ PHP frameworks.
 
 ````
 // The default setting is to use PHP Notices to alert errors.
-$widget = new Recensus_Widget($merchantToken, $merchantSecret);
+$widget = new Recensus_Widget($merchantId, $merchantSecret);
 
 // You can pass true as the fourth argument to use Exceptions instead. 
 // Note: Failure to catch exceptions will result in the product page failing to render.
-$widget = new Recensus_Widget($merchantToken, $merchantSecret, null, true);
+$widget = new Recensus_Widget($merchantId, $merchantSecret, null, true);
 
 // You can also set Recensus_Widget to throw exceptions after construction.
-$widget = new Recensus_Widget($merchantToken, $merchantSecret);
+$widget = new Recensus_Widget($merchantId, $merchantSecret);
 $widget->setThrowExceptions(true);
 
 ````
@@ -316,13 +316,13 @@ $widget->setThrowExceptions(true);
 
 ````
 // The default setting is to use PHP Notices to alert errors.
-$api = new Recensus_Api($merchantToken, $merchantSecret);
+$api = new Recensus_Api($merchantId, $merchantSecret);
 
 // You can pass true as the third argument to use Exceptions instead. 
-$api = new Recensus_Api($merchantToken, $merchantSecret, true);
+$api = new Recensus_Api($merchantId, $merchantSecret, true);
 
 // You can also set Recensus_Api to throw exceptions after construction.
-$api = new Recensus_Api($merchantToken, $merchantSecret);
+$api = new Recensus_Api($merchantId, $merchantSecret);
 $api->setThrowExceptions(true);
 
 ````
