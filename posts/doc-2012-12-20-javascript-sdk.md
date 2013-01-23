@@ -12,7 +12,7 @@ used to render Recensus content on merchant websites.
 
 ## Registering As A Merchant
 
-In order to display review content on a merchant website the merchant must register at http://app.recnesus.com/en/register.
+In order to display review content on a merchant website the merchant must register at http://app.recensus.com/en/signup.
 The registration process issues a merchant with a merchant ID (mid) and a shared secret. These are required to use the techniques bellow. 
 On registration a test merchant is created, please use this merchant when testing out Recensus on development and staging environments. 
 
