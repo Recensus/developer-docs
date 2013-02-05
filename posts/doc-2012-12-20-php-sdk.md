@@ -75,7 +75,7 @@ To render the widget use the following steps:
 
 2) Choose the type of widget you'd like displayed on the page (widget, button)
 
-3) Create a <div> as described bellow and use the PHPSDK to fill it's "data-settings" property.
+3) Create a &lt;div$gt; as described bellow and use the PHPSDK to fill it's "data-settings" property.
 
 ### Example - Rendering The Review Widget
 
@@ -227,8 +227,8 @@ $ccr = array(
             "purchaseDate" => "2012-12-12T16:00:00+0000",
             "purchases" => array(
                 array(
-                    "name" => "TEST"
-                    "url" => "http://yourwebsite.com/yourproductpage"
+                    "name" => "TEST",
+                    "url" => "http://yourwebsite.com/yourproductpage",
                     "brand" => "TEST",
                     "mpn" => "TEST",
                     "gtin" => 123456,
